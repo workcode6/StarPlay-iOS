@@ -1,0 +1,22 @@
+name: MacOS Matrix Probe
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe-13:
+    runs-on: macos-13
+    steps:
+      - run: sw_vers
+  probe-14:
+    runs-on: macos-14
+    steps:
+      - run: sw_vers
+  probe-15:
+    runs-on: macos-15
+    steps:
+      - run: sw_vers
+  probe-latest:
+    runs-on: macos-latest
+    steps:
+      - run: sw_vers
