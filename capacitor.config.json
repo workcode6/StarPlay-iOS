@@ -1,0 +1,13 @@
+{
+  "appId": "com.starplay.ios",
+  "appName": "星映 StarPlay",
+  "webDir": "www",
+  "ios": {
+    "contentInset": "always",
+    "limitsNavigationsToAppBoundDomains": false,
+    "backgroundColor": "#0E0C1D"
+  },
+  "server": {
+    "cleartext": true
+  }
+}
