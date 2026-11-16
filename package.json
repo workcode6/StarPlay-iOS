@@ -1,0 +1,20 @@
+{
+  "name": "starplay-ios",
+  "version": "1.3.3",
+  "description": "StarPlay iOS shell (Capacitor) — built on GitHub Actions macOS runner",
+  "scripts": {
+    "build": "vite build",
+    "sync": "npx cap sync ios",
+    "ios:add": "npx cap add ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/ios": "^6.2.0",
+    "@capacitor/app": "^6.0.2",
+    "@capacitor/filesystem": "^6.0.2",
+    "@capacitor/preferences": "^6.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0"
+  }
+}

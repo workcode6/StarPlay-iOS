@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="StarPlay">
+<title>星映 StarPlay · iPad 安装</title>
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'SF Pro Text','PingFang SC',sans-serif;
+  background:radial-gradient(900px 500px at 50% -10%,rgba(124,108,255,.28),transparent 60%),#0E0C1D;
+  color:#E9EDF6;min-height:100vh;display:flex;justify-content:center;
+  padding:calc(env(safe-area-inset-top) + 28px) 20px 40px;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:520px}
+.hero{display:flex;align-items:center;gap:18px;margin-bottom:30px}
+.icon{width:88px;height:88px;border-radius:22px;box-shadow:0 14px 38px rgba(60,40,140,.55);flex:none}
+.ht h1{font-size:26px;font-weight:800;letter-spacing:.5px;margin-bottom:6px}
+.ht p{font-size:13.5px;color:#A9A3CC;line-height:1.5}
+.badge{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.6px;
+  padding:4px 10px;border-radius:8px;background:rgba(255,119,0,.16);color:#FF9440;border:1px solid rgba(255,119,0,.3)}
+.steps{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.step{display:flex;gap:14px;background:rgba(139,124,255,.07);border:1px solid rgba(139,124,255,.16);
+  border-radius:16px;padding:16px 18px;align-items:flex-start}
+.n{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;
+  background:linear-gradient(135deg,#FF7700,#FF9D3D);color:#fff}
+.step b{display:block;font-size:15px;margin-bottom:4px}
+.step span{font-size:13px;color:#A9A3CC;line-height:1.6}
+.step code{background:rgba(255,255,255,.07);padding:2px 7px;border-radius:5px;font-size:12.5px;color:#FFD25E}
+.btn{display:block;text-align:center;padding:16px;border-radius:14px;font-size:16px;font-weight:700;
+  background:linear-gradient(135deg,#FF7700,#FF9D3D);color:#fff;text-decoration:none;
+  box-shadow:0 10px 28px rgba(255,119,0,.35);margin-bottom:14px}
+.ghost{display:block;text-align:center;padding:14px;border-radius:14px;font-size:14px;color:#A9A3CC;
+  border:1px solid rgba(139,124,255,.24);text-decoration:none}
+.note{font-size:12px;color:#7C77A0;line-height:1.7;margin-top:22px;padding-top:18px;
+  border-top:1px solid rgba(139,124,255,.12)}
+.note b{color:#B9B3D9}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <img class="icon" src="./apple-touch-icon.png" alt="StarPlay">
+    <div class="ht">
+      <h1>星映 StarPlay</h1>
+      <p>影视聚合播放器 · iPad / iPhone 全屏版</p>
+      <div class="badge">无需签名 · 无需 7 天重签</div>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div><b>确认在同一 Wi-Fi</b>
+      <span>这台电脑和 iPad 连同一个路由器。电脑上的 StarPlay 服务必须开着。</span></div></div>
+    <div class="step"><div class="n">2</div><div><b>Safari 打开本页面</b>
+      <span>地址是 <code id="u">载入中…</code>。当前已在 Safari 里就继续下一步。</span></div></div>
+    <div class="step"><div class="n">3</div><div><b>点底部「分享」→「添加到主屏幕」</b>
+      <span>分享图标在 Safari 底部工具栏中间。添加后桌面会出现星映图标。</span></div></div>
+    <div class="step"><div class="n">4</div><div><b>从桌面图标打开</b>
+      <span>全屏运行、无地址栏，和 App Store 下载的 App 一致。</span></div></div>
+  </div>
+  <a class="btn" href="./index.html">打开 StarPlay</a>
+  <a class="ghost" href="./guide.html">添加源说明 / 常见问题</a>
+  <div class="note">
+    <b>为什么不是 App Store 的 ipa？</b><br>
+    iOS 安装包必须由 macOS 上的 Xcode 编译，Windows 产不出来。
+    「添加到主屏幕」是苹果官方支持的安装方式（PWA），效果等同原生 App：
+    独立图标、全屏运行、可后台、有启动画面。
+    如果要真 ipa，需要一台 Mac 或 GitHub Actions 的 macOS runner 构建（工程已备好，见 starplay/ios/）。
+  </div>
+</div>
+<script>
+  document.getElementById('u').textContent = location.origin + '/install.html';
+</script>
+</body>
+</html>
