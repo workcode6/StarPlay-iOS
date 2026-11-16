@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StarPlay iPad 连接指南</title>
+<style>
+body{margin:0;font-family:-apple-system,'PingFang SC',sans-serif;background:#0e0c1d;color:#e9edf6;display:flex;justify-content:center;padding:40px 20px}
+.card{max-width:640px;background:#1a1730;border:1px solid #34305a;border-radius:20px;padding:32px}
+h1{font-size:24px;margin:0 0 6px}h1 em{font-style:normal;color:#ff7700}
+p,li{color:#b9b3d9;line-height:1.8;font-size:14.5px}
+code{background:#221e3f;padding:2px 8px;border-radius:6px;color:#ffd25e;font-size:13px}
+ol{padding-left:22px}b{color:#fff}
+.step{display:flex;gap:14px;margin:18px 0;align-items:flex-start}
+.n{background:linear-gradient(135deg,#ff7700,#ff9d3d);color:#fff;border-radius:50%;width:28px;height:28px;display:grid;place-items:center;flex:none;font-weight:800}
+</style></head><body><div class="card">
+<h1>星映 <em>StarPlay</em> · iPad 连接指南</h1>
+<p>本页是电脑上运行的 StarPlay Web 版。用 iPad 完成下面三步，即可像原生 App 一样全屏使用：</p>
+<div class="step"><div class="n">1</div><div><b>同一 Wi-Fi</b><br>iPad 与这台电脑连接同一个局域网。</div></div>
+<div class="step"><div class="n">2</div><div><b>Safari 打开</b><br><code>http://192.168.110.14:5720</code>（本页地址去掉 /guide 即是）。</div></div>
+<div class="step"><div class="n">3</div><div><b>添加到主屏幕</b><br>Safari 底部「分享」按钮 →「添加到主屏幕」→ 图标出现在桌面，打开即全屏 App。</div></div>
+<p>首次打不开时，请在电脑上允许 Windows 防火墙放行 StarPlay/node。</p>
+<h2 style="font-size:17px;margin:22px 0 8px">直播源（导入播放器用）</h2>
+<p>本服务自带已实测可播的频道表（70 个国际频道）：</p>
+<p><code>http://&lt;电脑IP&gt;:5720/live/working.m3u</code></p>
+<p>另附央视/卫视聚合源（GitHub 公网）：<code>https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/list.txt</code></p>
+<p style="margin-top:24px"><a href="/" style="color:#ff8a3d">← 返回 StarPlay 主界面</a></p>
+</div></body></html>
