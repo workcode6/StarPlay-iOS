@@ -10,7 +10,9 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-14
+    # 注意：这个账号无法分配 macos-14（报 unsupported configuration），
+    # 但 macos-latest 实测可分配（runner 1000000013 success）。
+    runs-on: macos-latest
     timeout-minutes: 45
 
     steps:
@@ -19,9 +21,9 @@ jobs:
       - name: Environment
         run: |
           sw_vers
-          xcodebuild -version
-          node --version || true
           uname -m
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -43,11 +45,13 @@ jobs:
         run: |
           if [ -d ios/App ]; then echo 'ios/App present'; else npx cap add ios; fi
           npx cap sync ios
+          ls -la ios/App | head -20
 
       - name: Build unsigned IPA
         run: |
+          set -e
           cd ios/App
-          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CODE_SIGN_ENTITLEMENTS= -quiet build
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CODE_SIGN_ENTITLEMENTS= build
 
       - name: Package IPA
         run: |
@@ -60,6 +64,7 @@ jobs:
           cp -R "$APP" Payload/
           zip -qry StarPlay-unsigned.ipa Payload
           ls -lh StarPlay-unsigned.ipa
+          unzip -l StarPlay-unsigned.ipa | head -15
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
