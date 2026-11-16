@@ -10,9 +10,7 @@ permissions:
 
 jobs:
   build:
-    # macos-14 (Sonoma, Xcode 15) 是免费额度里最稳的公开 runner。
-    # 不要写 macos-14-arm64-us-xl 之类的付费大规格 label —— 公开仓库用不了，
-    # 会直接报 The configuration is not supported。
+    # 必须用 GitHub 免费账号支持的公开 runner：macos-13 / macos-14 / macos-15
     runs-on: macos-14
     timeout-minutes: 45
 
