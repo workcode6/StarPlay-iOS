@@ -5,13 +5,24 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
+    # macos-14 (Sonoma, Xcode 15) 是免费额度里最稳的公开 runner。
+    # 不要写 macos-14-arm64-us-xl 之类的付费大规格 label —— 公开仓库用不了，
+    # 会直接报 The configuration is not supported。
     runs-on: macos-14
-    timeout-minutes: 40
+    timeout-minutes: 45
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: |
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -19,48 +30,42 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: |
-          npm install --no-audit --no-fund
+        run: npm install --no-audit --no-fund
 
       - name: Prepare web assets
         run: |
           mkdir -p www
-          if [ -d "web-dist" ]; then cp -R web-dist/. www/; fi
-          if [ ! -f "www/index.html" ]; then
-            echo '<!doctype html><meta charset="utf-8"><title>StarPlay</title><h1>StarPlay</h1><p>web assets missing</p>' > www/index.html
+          if [ -f www/index.html ]; then
+            echo web assets already committed: $(du -sh www | cut -f1)
+          else
+            echo '<!doctype html><meta charset=utf-8><title>StarPlay</title><h1>StarPlay</h1>' > www/index.html
           fi
           ls -la www | head -20
 
       - name: Add iOS platform
         run: |
-          npx cap add ios || true
+          if [ -d ios/App ]; then echo ios/App exists; else npx cap add ios; fi
           npx cap sync ios
 
       - name: Build unsigned IPA
         run: |
           cd ios/App
-          xcodebuild -workspace App.xcworkspace \
-            -scheme App \
-            -configuration Release \
-            -sdk iphoneos \
-            -derivedDataPath build \
-            CODE_SIGNING_ALLOWED=NO \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGN_ENTITLEMENTS="" \
-            build | xcpretty || xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+          ls -la
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CODE_SIGN_ENTITLEMENTS= -quiet build
 
       - name: Package IPA
         run: |
           set -e
-          APP=$(find ios/App/build/Build/Products/Release-iphoneos -maxdepth 1 -name "*.app" | head -1)
-          echo "APP=$APP"
+          APP=$(find ios/App/build/Build/Products/Release-iphoneos -maxdepth 1 -name '*.app' | head -1)
+          if [ -z "$APP" ]; then echo '::error::no .app produced'; find ios/App/build -name '*.app' || true; exit 1; fi
+          echo APP=$APP
+          rm -rf Payload StarPlay-unsigned.ipa
           mkdir -p Payload
           cp -R "$APP" Payload/
           zip -qry StarPlay-unsigned.ipa Payload
           ls -lh StarPlay-unsigned.ipa
 
-      - name: Upload IPA
+      - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
           name: StarPlay-ipa
