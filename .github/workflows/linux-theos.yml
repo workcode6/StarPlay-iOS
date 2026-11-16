@@ -1,0 +1,68 @@
+name: Build iOS IPA (Linux + Theos)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      THEOS: /opt/theos
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq git make clang ldid zip unzip curl libssl-dev
+          echo '--- versions ---'
+          clang --version | head -2
+          ldid -v 2>&1 | head -2 || true
+
+      - name: Install Theos
+        run: |
+          sudo git clone --recursive --depth 1 https://github.com/theos/theos.git /opt/theos
+          sudo chown -R $(id -u):$(id -g) /opt/theos
+          echo '--- theos tree ---'
+          ls /opt/theos
+
+      - name: Install iOS SDK
+        run: |
+          cd /tmp
+          # iPhoneOS SDK 从 theos/sdks 拉（社区维护，含 arm64）
+          git clone --depth 1 https://github.com/theos/sdks.git theos-sdks
+          ls theos-sdks | head -20
+          mkdir -p /opt/theos/sdks
+          # 取最新的 iPhoneOS sdk
+          SDK=$(ls -d theos-sdks/iPhoneOS*.sdk 2>/dev/null | sort -V | tail -1)
+          echo "picked SDK: $SDK"
+          if [ -z "$SDK" ]; then echo '::error::no iPhoneOS sdk found'; exit 1; fi
+          cp -R "$SDK" /opt/theos/sdks/
+          ls /opt/theos/sdks
+
+      - name: Show available SDK
+        run: |
+          ls /opt/theos/sdks/
+          SDKNAME=$(ls /opt/theos/sdks/ | grep -i iphoneos | head -1 | sed 's/.sdk//')
+          echo "SDKNAME=$SDKNAME" >> $GITHUB_ENV
+          echo "using $SDKNAME"
+
+      - name: Build payload app
+        run: |
+          set -e
+          echo '--- workspace ---'
+          ls -la
+          du -sh www 2>/dev/null || echo 'no www'
+          # 如果没有 iOS 工程，就用 Theos 造一个最小 WebView 容器
+          mkdir -p build/StarPlay.app
+          echo 'Theos build path ready'
+
+      - name: Report
+        run: |
+          echo 'Theos + iOS SDK 已就绪，但生成可用的 ipa 需要 Xcode 的 UIKit 链接能力。'
+          echo '这条路线只能内置一个极简 WebView 壳，功能等价于 PWA。'
+          echo '先验证工具链可用性。'
