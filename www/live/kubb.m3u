@@ -1,4 +1,24 @@
 #EXTM3U
+#EXTINF:-1 tvg-id="elrlszcDp3zAWrpao9hHV3" tvg-logo="https://static.kubb.tv/upload/news/89e8420816f84cfe91b64fb24c348bc2.png" group-title="酷播·国际新闻",英伟达董事会：不考虑让黄仁勋重任CEO
+https://upload.kubb.tv/api/video/MasterPlayList?id=elrlszcDp3zAWrpao9hHV3
+#EXTINF:-1 tvg-id="iCo7OMJHFb3gRAk1WaQOv1" tvg-logo="https://static.kubb.tv/upload/news/f937a952909e42b2ac85ce3852f55ce8.png" group-title="酷播·国际新闻",伊朗地方官员否认伊斯法罕启动防空系统
+https://upload.kubb.tv/api/video/MasterPlayList?id=iCo7OMJHFb3gRAk1WaQOv1
+#EXTINF:-1 tvg-id="tyf6bsC3WvM0fhJy2EZWyT" tvg-logo="https://static.kubb.tv/upload/news/87b930533b584498ac3aafc63feb6516.png" group-title="酷播·国际新闻",沙特国王发布国王令调整沙特主导的多国联军指挥官
+https://upload.kubb.tv/api/video/MasterPlayList?id=tyf6bsC3WvM0fhJy2EZWyT
+#EXTINF:-1 tvg-id="krqjo3LAECMZYpW3J7isX0" tvg-logo="https://static.kubb.tv/upload/news/e5c43618612a485692ac628e14316354.png" group-title="酷播·国际新闻",日本推动修订“安保三文件”
+https://upload.kubb.tv/api/video/MasterPlayList?id=krqjo3LAECMZYpW3J7isX0
+#EXTINF:-1 tvg-id="rSOfMtsPXG3bMVIyVJlLw3" tvg-logo="https://static.kubb.tv/upload/news/acf880f7b2f7459daa81cd64e1a8bc86.png" group-title="酷播·国际新闻",美交通部长估计停飞造成数十亿美元损失
+https://upload.kubb.tv/api/video/MasterPlayList?id=rSOfMtsPXG3bMVIyVJlLw3
+#EXTINF:-1 tvg-id="pFkyiLKgXxvuQCT75UK3Y4" tvg-logo="https://static.kubb.tv/upload/news/327e874289394369a460a220b83b5ec2.png" group-title="酷播·国际新闻",军费等问题存分歧，北约取消2027年峰会
+https://upload.kubb.tv/api/video/MasterPlayList?id=pFkyiLKgXxvuQCT75UK3Y4
+#EXTINF:-1 tvg-id="Wieu2F5VBrChXmgOnbnRb3" tvg-logo="https://static.kubb.tv/upload/news/c17d89a220a7485c8fe0b596f9f56eb4.png" group-title="酷播·国际新闻",以军空袭发生在联合国燃料运输车队附近
+https://upload.kubb.tv/api/video/MasterPlayList?id=Wieu2F5VBrChXmgOnbnRb3
+#EXTINF:-1 tvg-id="xsjSfXGvUyo1ypkFiTFZWC" tvg-logo="https://static.kubb.tv/upload/news/2ddc97c239de45adabb4f605115e5473.png" group-title="酷播·国际新闻",胡塞武装逼近也门政府所在地亚丁
+https://upload.kubb.tv/api/video/MasterPlayList?id=xsjSfXGvUyo1ypkFiTFZWC
+#EXTINF:-1 tvg-id="MRgrbtQ48K21hYih54hzl2" tvg-logo="https://static.kubb.tv/upload/news/7c0700069c934be29f5b4a9d1e21e0c8.png" group-title="酷播·国际新闻",俄罗斯总统助理乌沙科夫表示三方会谈将继续举行
+https://upload.kubb.tv/api/video/MasterPlayList?id=MRgrbtQ48K21hYih54hzl2
+#EXTINF:-1 tvg-id="bjEnTlGstb4zA3JD4uvbW5" tvg-logo="https://static.kubb.tv/upload/news/cbea9e36e6e941a4a2fffb54af4a19d9.png" group-title="酷播·国际新闻",波黑新一届主席团成员宣誓就职
+https://upload.kubb.tv/api/video/MasterPlayList?id=bjEnTlGstb4zA3JD4uvbW5
 #EXTINF:-1 tvg-id="4yzJwIJp1SsuU9pLJVKOq2" tvg-logo="https://static.kubb.tv/upload/news/0e267ad607e2473e9b8af79b655219a9.png" group-title="酷播·国际新闻",以色列：埃森科特指责内塔尼亚胡玩弄“政治伎俩”
 https://upload.kubb.tv/api/video/MasterPlayList?id=4yzJwIJp1SsuU9pLJVKOq2
 #EXTINF:-1 tvg-id="c74h9zV1TLv30k59H7dtr5" tvg-logo="https://static.kubb.tv/upload/news/10e38f4f976f4618972a974e0bcb51ff.png" group-title="酷播·国际新闻",以媒：撇开美国以色列或单独打击伊朗
@@ -11,26 +31,6 @@ https://upload.kubb.tv/api/video/MasterPlayList?id=W1d2FDvgInbELiwrmszcs6
 https://upload.kubb.tv/api/video/MasterPlayList?id=OJNn0WiEVJMrRmaLWDONE1
 #EXTINF:-1 tvg-id="eYU2zUCBsqgWv0K5YygBVA" tvg-logo="https://static.kubb.tv/upload/news/a4845ea57c8246b1902e93ffaf3110a7.png" group-title="酷播·国际新闻",乌总统抱怨乌军使用“星盾”再遭限速
 https://upload.kubb.tv/api/video/MasterPlayList?id=eYU2zUCBsqgWv0K5YygBVA
-#EXTINF:-1 tvg-id="5LyX5w7uVqxEhqNK5YTFu4" tvg-logo="https://static.kubb.tv/upload/news/38d87ef943804ac9a3df88cca156037c.png" group-title="酷播·国际新闻",特朗普称应中东盟友请求，延缓对伊朗行动
-https://upload.kubb.tv/api/video/MasterPlayList?id=5LyX5w7uVqxEhqNK5YTFu4
-#EXTINF:-1 tvg-id="WnLzQk6a7uYzZTHRku5zxV" tvg-logo="https://static.kubb.tv/upload/news/83cc94b875d24f3c94ed6de13504fc98.png" group-title="酷播·国际新闻",台积电爆出信息安全风波
-https://upload.kubb.tv/api/video/MasterPlayList?id=WnLzQk6a7uYzZTHRku5zxV
-#EXTINF:-1 tvg-id="Byk3OERtMDCrzpbHhbza3G" tvg-logo="https://static.kubb.tv/upload/news/9478c14fbdf741008d807ff3c04740a2.png" group-title="酷播·国际新闻",美政府呼吁国会追加拨款升级空管系统
-https://upload.kubb.tv/api/video/MasterPlayList?id=Byk3OERtMDCrzpbHhbza3G
-#EXTINF:-1 tvg-id="4xOevslH8SIhE4QNLyExT7" tvg-logo="https://static.kubb.tv/upload/news/25b317460711462d80e539fb949d4d4b.png" group-title="酷播·国际新闻",美军“罗斯福”号抵达中东形成三航母部署态势
-https://upload.kubb.tv/api/video/MasterPlayList?id=4xOevslH8SIhE4QNLyExT7
-#EXTINF:-1 tvg-id="NP125EeGeyRZHzVL3BerW5" tvg-logo="https://static.kubb.tv/upload/news/7e1b73babb6c469b8ecd1b6c5e1b71e2.png" group-title="酷播·国际新闻",美国航班大规模停飞事件影响持续
-https://upload.kubb.tv/api/video/MasterPlayList?id=NP125EeGeyRZHzVL3BerW5
-#EXTINF:-1 tvg-id="E0K1EmCFi2jiEETcTANEm2" tvg-logo="https://static.kubb.tv/upload/news/da9b5e20a84e42b59ddf1d6784cc9aaa.png" group-title="酷播·国际新闻",巴林国防军称巴林遭伊朗无人机袭击
-https://upload.kubb.tv/api/video/MasterPlayList?id=E0K1EmCFi2jiEETcTANEm2
-#EXTINF:-1 tvg-id="CUfC9M9KtP84yRvzuyqIwB" tvg-logo="https://static.kubb.tv/upload/news/dd20bb6bc65d49cc80d44e30f1006f25.png" group-title="酷播·国际新闻",APEC工商咨询理事会第四次会议今天闭幕
-https://upload.kubb.tv/api/video/MasterPlayList?id=CUfC9M9KtP84yRvzuyqIwB
-#EXTINF:-1 tvg-id="2g3aFpPfVDxVUjBnSNeZX0" tvg-logo="https://static.kubb.tv/upload/news/b3fb6242922542fd83ed682f07586f10.png" group-title="酷播·国际新闻",英伟达、谷歌，涌进“救命”生意
-https://upload.kubb.tv/api/video/MasterPlayList?id=2g3aFpPfVDxVUjBnSNeZX0
-#EXTINF:-1 tvg-id="mLtbe8eJUgnUKROVENp8D0" tvg-logo="https://static.kubb.tv/upload/news/60d676a64f94458c9429c75137345563.png" group-title="酷播·国际新闻",英国凯特王妃将与威廉王子共同访问印度
-https://upload.kubb.tv/api/video/MasterPlayList?id=mLtbe8eJUgnUKROVENp8D0
-#EXTINF:-1 tvg-id="WgSQsQy1peLTJ1J4ldGzM8" tvg-logo="https://static.kubb.tv/upload/news/5748c177d72548cd9320e87230a33157.png" group-title="酷播·国际新闻",SpaceX首次实现“筷子夹飞船”
-https://upload.kubb.tv/api/video/MasterPlayList?id=WgSQsQy1peLTJ1J4ldGzM8
 #EXTINF:-1 tvg-id="2cebSaGitgYHiZjniGPtt3" tvg-logo="https://static.kubb.tv/upload/news/13dc0d4d908e4210bc1bf90f037287c3.png" group-title="酷播·中国新闻",赵本山“打假”打到自己头上，顺手把中年人唱哭了
 https://upload.kubb.tv/api/video/MasterPlayList?id=2cebSaGitgYHiZjniGPtt3
 #EXTINF:-1 tvg-id="ug8CyMQq1vGu5drmnXkNt0" tvg-logo="https://static.kubb.tv/upload/news/7cf8d9b0918640418ee72cf64996c3f5.png" group-title="酷播·中国新闻",吴清称A股市情在全球独一无二，立足本土谋长远发展
@@ -223,3 +223,5 @@ https://upload.kubb.tv/api/video/MasterPlayList?id=JUxWhVqnicVSzY4gtwQSw5
 https://upload.kubb.tv/api/video/MasterPlayList?id=ZQIw0e3OQzGAK499Oy9SfD
 #EXTINF:-1 tvg-id="wazSo2IDo8GCillv3tBVt4" tvg-logo="https://static.kubb.tv/upload/news/202609181305200512636.gif" group-title="酷播·生活",Hosico：来，加钟！
 https://upload.kubb.tv/api/video/MasterPlayList?id=wazSo2IDo8GCillv3tBVt4
+#EXTINF:-1 tvg-id="5LyX5w7uVqxEhqNK5YTFu4" tvg-logo="https://static.kubb.tv/upload/news/38d87ef943804ac9a3df88cca156037c.png" group-title="酷播·热门",特朗普称应中东盟友请求，延缓对伊朗行动
+https://upload.kubb.tv/api/video/MasterPlayList?id=5LyX5w7uVqxEhqNK5YTFu4
