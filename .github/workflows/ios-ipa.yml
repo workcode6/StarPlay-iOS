@@ -47,6 +47,21 @@ jobs:
           npx cap sync ios
           ls -la ios/App | head -20
 
+      - name: Allow HTTP (ATS) + inline media
+        run: |
+          set -e
+          PLIST=$(find ios/App -name 'Info.plist' -path '*App*' | head -1)
+          echo "PLIST=$PLIST"
+          /usr/libexec/PlistBuddy -c "Delete :NSAppTransportSecurity" "$PLIST" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :NSAppTransportSecurity dict" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :NSAppTransportSecurity:NSAllowsArbitraryLoads bool true" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :NSAppTransportSecurity:NSAllowsArbitraryLoadsInMedia bool true" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :NSAppTransportSecurity:NSAllowsArbitraryLoadsInWebContent bool true" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :NSAllowsArbitraryLoadsInWebContent bool true" "$PLIST" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :UIBackgroundModes array" "$PLIST" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :UIBackgroundModes:0 string audio" "$PLIST" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Print :NSAppTransportSecurity" "$PLIST"
+
       - name: Build unsigned IPA
         run: |
           set -e
