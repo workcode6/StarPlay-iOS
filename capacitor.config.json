@@ -5,9 +5,17 @@
   "ios": {
     "contentInset": "always",
     "limitsNavigationsToAppBoundDomains": false,
-    "backgroundColor": "#0E0C1D"
+    "backgroundColor": "#F7F7FB"
   },
   "server": {
-    "cleartext": true
+    "cleartext": true,
+    "allowNavigation": [
+      "*"
+    ]
+  },
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
   }
 }
