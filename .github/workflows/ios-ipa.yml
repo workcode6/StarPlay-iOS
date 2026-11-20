@@ -33,12 +33,10 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Ensure web assets
+      - name: Verify packaged renderer and provenance
         run: |
-          mkdir -p www
-          if [ ! -f www/index.html ]; then
-            printf '<!doctype html><meta charset=utf-8><title>StarPlay</title><h1>StarPlay</h1>' > www/index.html
-          fi
+          npm run build
+          cat www/renderer-assets.json
           du -sh www
 
       - name: Add iOS platform
@@ -65,8 +63,10 @@ jobs:
       - name: Build unsigned IPA
         run: |
           set -e
+          VERSION=$(node -p "require('./package.json').version")
+          BUILD_NUMBER=$(node -p "require('./package.json').buildNumber")
           cd ios/App
-          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CODE_SIGN_ENTITLEMENTS= build
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -derivedDataPath build MARKETING_VERSION="$VERSION" CURRENT_PROJECT_VERSION="$BUILD_NUMBER" CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CODE_SIGN_ENTITLEMENTS= build
 
       - name: Package IPA
         run: |
@@ -84,7 +84,9 @@ jobs:
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: StarPlay-ipa
-          path: StarPlay-unsigned.ipa
+          name: StarPlay-unsigned-ipa
+          path: |
+            StarPlay-unsigned.ipa
+            www/renderer-assets.json
           retention-days: 30
           if-no-files-found: error
