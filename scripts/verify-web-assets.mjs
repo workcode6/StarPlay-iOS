@@ -3,7 +3,15 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 
-export const digest = bytes => createHash('sha256').update(bytes).digest('hex');
+const textExtensions = new Set(['.css', '.html', '.js', '.json', '.m3u', '.svg', '.txt', '.xml']);
+
+export const digest = (bytes, name = '') => {
+  const extension = path.extname(name).toLowerCase();
+  const normalized = textExtensions.has(extension)
+    ? Buffer.from(bytes.toString('utf8').replace(/\r\n/g, '\n').replace(/\r/g, '\n'), 'utf8')
+    : bytes;
+  return createHash('sha256').update(normalized).digest('hex');
+};
 
 export async function verifyWebAssets(directory, { requireManifest = true } = {}) {
   const root = path.resolve(directory);
@@ -22,7 +30,7 @@ export async function verifyWebAssets(directory, { requireManifest = true } = {}
   if (!manifest.sourceCommit || !manifest.packageVersion || !manifest.files?.['index.html']) throw new Error('Renderer provenance is incomplete');
   for (const [name, hash] of Object.entries(manifest.files)) {
     const file = path.resolve(root, name);
-    if (!file.startsWith(root + path.sep) || digest(await fs.readFile(file)) !== hash) throw new Error('Renderer hash mismatch: ' + name);
+    if (!file.startsWith(root + path.sep) || digest(await fs.readFile(file), name) !== hash) throw new Error('Renderer hash mismatch: ' + name);
   }
   for (const reference of references) {
     const name = decodeURIComponent(reference.split('?')[0]).replace(/^(?:\.\/|\/)+/, '');
