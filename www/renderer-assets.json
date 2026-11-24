@@ -1,0 +1,21 @@
+{
+  "sourceCommit": "6914adc",
+  "packageVersion": "1.4.1",
+  "files": {
+    "apple-touch-icon.png": "67986935b665c87eefcf7ce496f3a4f6d8ff84f3265a11bcbe5c37342eaf98fd",
+    "brand-mark.svg": "b2191527e9d25cc87730a10cc19873cb2df2a614707ca2ebe47384641a980fe5",
+    "cover-placeholder-dark.png": "93fb24182db1e0c086368af78c666cbaac3bf01f6c83efe01b9e93d6deb842a8",
+    "cover-placeholder.png": "24969b1c342aebd761f84b244a3a115973e0ca211264d3e4868489f832bb9e76",
+    "guide.html": "a48845a88a088f7bfbd90426da94043a296472362208fc0424933c75559d15b6",
+    "icon-192.png": "b33425c45d39da34b6ba470bbc467bd33eecbd2fcc2f868101765ab55c732589",
+    "icon-512.png": "67986935b665c87eefcf7ce496f3a4f6d8ff84f3265a11bcbe5c37342eaf98fd",
+    "index.html": "1aee8041ad95bb0ccad178951894bca9b2783ed866af2745c5165fb1883ff7bf",
+    "install.html": "1af09da8d6f915ca93c413767f02ec5eef5af0151c8d124f61ffda5f254da05e",
+    "manifest.json": "a70ca65e727ac7c572c75f343a5fd4696303dbc1d5eacb459199cfa4f0bd2a30",
+    "sw.js": "2d1ec33bd19aa8e307fd44e14c2e5f9142ef44bd3bdde5c593b9983a8479fb80",
+    "assets/index-7vpKaBWd.js": "a70c27ab3df5a269fd318bb59830e00ebec9cceec1b1b64c1b9ff784f23f2325",
+    "assets/index-BtIwWt0X.css": "762826e52d5bab947f18f45a31abfd57a637dd799822489f4f51b38f19541c00",
+    "live/kubb.m3u": "eb3ef3f58230aeede3555600bbedc87d2fdc927bbd7beddc7baa7493bf0d6faf",
+    "live/working.m3u": "6b55cfd352090ae76b7175b172d743a7737f8247b6cce30eef2f0a762d2e6d9d"
+  }
+}
