@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "73710aa",
+  "sourceCommit": "e7e8bf4",
   "packageVersion": "1.4.1",
   "files": {
     "apple-touch-icon.png": "67986935b665c87eefcf7ce496f3a4f6d8ff84f3265a11bcbe5c37342eaf98fd",
@@ -9,12 +9,12 @@
     "guide.html": "a48845a88a088f7bfbd90426da94043a296472362208fc0424933c75559d15b6",
     "icon-192.png": "b33425c45d39da34b6ba470bbc467bd33eecbd2fcc2f868101765ab55c732589",
     "icon-512.png": "67986935b665c87eefcf7ce496f3a4f6d8ff84f3265a11bcbe5c37342eaf98fd",
-    "index.html": "ffe09ff2a060e190dee9065d2cea71efa2ca47de665460919bc434cf6d59da85",
+    "index.html": "eb1151673c0a2b95758b87950cc072a17e67b54125e2026ebbb683ed570e235f",
     "install.html": "1af09da8d6f915ca93c413767f02ec5eef5af0151c8d124f61ffda5f254da05e",
     "manifest.json": "a70ca65e727ac7c572c75f343a5fd4696303dbc1d5eacb459199cfa4f0bd2a30",
     "sw.js": "2d1ec33bd19aa8e307fd44e14c2e5f9142ef44bd3bdde5c593b9983a8479fb80",
-    "assets/index-BIQyAaJH.js": "83627a885548419c68320dbf96e4bac34fca1ade4870ba0ec1abaa2acd82fd1e",
     "assets/index-BtIwWt0X.css": "762826e52d5bab947f18f45a31abfd57a637dd799822489f4f51b38f19541c00",
+    "assets/index-CEHjYHPM.js": "d13fa38117ef9094e5e7e58f6cc977cc44bd07289fc85585c15e408475a77d41",
     "live/kubb.m3u": "75715df8848b6b9051516acef8cdaea27a6bad9a2ba614f43872ccffb17e315f",
     "live/working.m3u": "6b55cfd352090ae76b7175b172d743a7737f8247b6cce30eef2f0a762d2e6d9d"
   }
